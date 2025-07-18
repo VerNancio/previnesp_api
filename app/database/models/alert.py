@@ -10,7 +10,7 @@ class Alert(Base):
     # from ..models.district import District
 
     
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=True)
 
     start_date = Column(Date, nullable=False)
     start_time = Column(Time, nullable=False)

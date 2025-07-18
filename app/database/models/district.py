@@ -8,10 +8,10 @@ from sqlalchemy.orm import relationship
 class District(Base):
     __tablename__ = 'districts'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(20))
-    lat = Column(Float(11))
-    lon = Column(Float(11))
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=True)
+    name = Column(String(20), nullable=False)
+    lat = Column(Float(11), nullable=False)
+    lon = Column(Float(11), nullable=False)
 
     previsions = relationship('Prevision', back_populates='district')
     alerts = relationship('Alert', back_populates='district')

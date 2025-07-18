@@ -1,4 +1,4 @@
-from sqlalchemy import Session
+from sqlalchemy.orm import Session
 
 from ..models.alert import Alert
 from ..models.district import District

@@ -21,3 +21,11 @@ Base.metadata.create_all(bind=engine)
 
 # Session para operar no banco
 session = Session(bind=engine)
+
+
+def get_db():
+    db = session
+    try:
+        yield db
+    finally:
+        db.close()

@@ -6,9 +6,9 @@ from sqlalchemy.orm import relationship
 class Weather_desc(Base):
     __tablename__ = 'weather_descs'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=True)
     code = Column(Integer, nullable=False)
-    desc = Column(String(40))
+    desc = Column(String(40), nullable=False)
 
     previsions = relationship('Prevision', back_populates='weather_desc')
 

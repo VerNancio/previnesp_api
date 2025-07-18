@@ -1,4 +1,4 @@
-from sqlalchemy import Session
+from sqlalchemy.orm import Session
 from ..models.weather_desc import Weather_desc
 
 from typing import Optional, List

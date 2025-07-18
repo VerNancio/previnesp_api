@@ -1,7 +1,12 @@
 from fastapi import FastAPI
-from app.api import routes_produtos, routes_usuarios
+from app.routes import routes_alerts, routes_previsions
+from app.database.init_db import init_db
 
 app = FastAPI()
 
-app.include_router(routes_produtos.router, prefix="/produtos")
-app.include_router(routes_usuarios.router, prefix="/usuarios")
+@app.on_event("startup")
+def startup_event():
+    init_db()
+
+app.include_router(routes_alerts.router, prefix="/alerts")
+app.include_router(routes_previsions.router, prefix="/previsions")

@@ -6,14 +6,14 @@ import datetime as dt
 class Prevision(Base):
     __tablename__ = 'previsions'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=True)
     date = Column(Date, nullable=False)
     horary = Column(Time, nullable=False)
     temp_min = Column(Numeric(4,1), nullable=False)
     temp_max = Column(Numeric(4,1), nullable=False)
     precipitation = Column(Numeric(3, 2), nullable=False)
     humidity = Column(Numeric(3, 2), nullable=False)
-    wind_speed = Column(Numeric(3, 2), nullable=True)  # adiciona a coluna
+    wind_speed = Column(Numeric(3, 2), nullable=True) 
 
     district_id = Column(Integer, ForeignKey('districts.id'), nullable=False)
     weather_desc_id = Column(Integer, ForeignKey('weather_descs.id'), nullable=False)
